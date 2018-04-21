@@ -10,16 +10,23 @@ public class AIMovement : MonoBehaviour {
 	public LayerMask obsMask;
 
 	[Space]
-
 	[Header("Movement")]
 	public float gravity = -6f;
 	public float movementSpeed = 6f;
 	public float accelerationTimeGrounded;
 	public float accelerationTimeAirborne;
 
+	[Space]
+	[Header("Attacking")]
+	public float attackTime;
+
+	private bool attacked = false;
+	private float prevInput;
+	private float timeForAtkEnd;
 
 	private Health myHealth;
 	private Controller2D controller;
+
 	private Vector2 velocity;
 	private float velocityXSmoothing;
 	private float testInput = 0.5f;
@@ -44,6 +51,12 @@ public class AIMovement : MonoBehaviour {
 		if (hp <= 0)
 		{
 			testInput = 0;
+		}
+
+		if (attacked && Time.time > timeForAtkEnd)
+		{
+			attacked = false;
+			testInput = -prevInput;
 		}
 
 		CheckPath(); // check if path is okay, otherwise reverse it
@@ -76,7 +89,7 @@ public class AIMovement : MonoBehaviour {
 		{
 			if (isInFront.collider.name == "Player")
 			{
-				//Attack();
+				Attack(isInFront);
 			}
 
 			testInput = -testInput;
@@ -93,25 +106,19 @@ public class AIMovement : MonoBehaviour {
 		}		
 	}
 
-	private void Attack() {
-		StopAllCoroutines();
-		print("attacking");
-		// call the attack function on the damager script or health script
-		StartCoroutine(Wait(1f));
+	private void Attack(RaycastHit2D target) {
+		prevInput = testInput;
+		testInput = 0;
+		timeForAtkEnd = Time.time + attackTime;
 
-	}
+		Health prey = target.collider.gameObject.GetComponent<Health>();
 
-	private IEnumerator Wait(float time) {
-		while (true)
+		if (prey != null)
 		{
-			print("waiting");
-			float s = testInput;
-			testInput = 0;
-			yield return new WaitForSeconds(time);
-			print("done Waiting");
-			testInput = s;
-			break;
+			prey.TakeDamage(50);
 		}
+
+		attacked = true;
 	}
 	
 }

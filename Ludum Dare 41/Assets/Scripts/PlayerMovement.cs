@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Health))]
 public class PlayerMovement : MonoBehaviour {
 
 	[Header ("Movement Variables")]
@@ -32,13 +33,12 @@ public class PlayerMovement : MonoBehaviour {
 
 	private Controller2D controller;
 	private ShootingBehaviour shoot;
-	private SpriteRenderer sprite;
+	private Health myHealth;
 
 	private void Start()
 	{
 		controller = GetComponent<Controller2D>();
-
-		sprite = GetComponent<SpriteRenderer>();
+		myHealth = GetComponent<Health>();
 
 		if (GetComponent<ShootingBehaviour>() != null)
 		{
@@ -62,6 +62,11 @@ public class PlayerMovement : MonoBehaviour {
 
 		// get playerinput
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+		if (myHealth.readOnlyHealthPoints <= 0)
+		{
+			input = Vector2.zero;
+		}
 
 		Move(input);
 
