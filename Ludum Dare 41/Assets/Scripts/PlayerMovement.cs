@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerMovement : MonoBehaviour {
 
 	[Header ("Movement Variables")]
@@ -31,10 +32,13 @@ public class PlayerMovement : MonoBehaviour {
 
 	private Controller2D controller;
 	private ShootingBehaviour shoot;
+	private SpriteRenderer sprite;
 
 	private void Start()
 	{
 		controller = GetComponent<Controller2D>();
+
+		sprite = GetComponent<SpriteRenderer>();
 
 		if (GetComponent<ShootingBehaviour>() != null)
 		{

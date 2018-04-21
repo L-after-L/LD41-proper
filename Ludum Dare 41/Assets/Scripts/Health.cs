@@ -11,13 +11,13 @@ public class Health : MonoBehaviour {
 	private int currentHealthPoints;
 	[HideInInspector] public int readOnlyHealthPoints;
 
+	public bool instantDeath = false;
+
 	private void Awake()
 	{
 		currentHealthPoints = startingHealthPoints;
 	}
 
-<<<<<<< HEAD
-=======
 	private void Update()
 	{
 		if (instantDeath)
@@ -27,7 +27,6 @@ public class Health : MonoBehaviour {
 		readOnlyHealthPoints = currentHealthPoints;
 	}
 
->>>>>>> 15bb3361e0e33c54224e4eb36e631ec20786552d
 	public void TakeDamage(int damage) {
 		currentHealthPoints -= damage;
 		if (currentHealthPoints <= 0)

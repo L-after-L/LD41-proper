@@ -76,7 +76,7 @@ public class AIMovement : MonoBehaviour {
 		{
 			if (isInFront.collider.name == "Player")
 			{
-				Attack();
+				//Attack();
 			}
 
 			testInput = -testInput;
