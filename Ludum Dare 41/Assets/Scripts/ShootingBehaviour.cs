@@ -17,7 +17,7 @@ public class ShootingBehaviour : MonoBehaviour {
 
 	private void Start()
 	{
-
+		currentMuzzlePos = pos[0];
 	}
 
 	private void Update()
@@ -33,23 +33,27 @@ public class ShootingBehaviour : MonoBehaviour {
 		{
 			// player moving right
 			currentMuzzlePos = pos[0];
+			print("right");
 		}
 		else if (h < 0 && v == 0)
 		{
 			// player moving left
 			currentMuzzlePos = pos[4];
+			print("left");
 		}
-		else if (h == 0 && v >= 0) {
+		else if (h == 0 && v > 0) {
 			// player looing up
 			currentMuzzlePos = pos[2];
+			print("up");
 		} else {
 			currentMuzzlePos = lastMuzzlePos;
 		}
+
 		// keep muzzle direction the same as last frame if no change has been made
 		lastMuzzlePos = currentMuzzlePos;
 	}
 
 	public void Fire() {
-		Destroy(Instantiate(projectilePrefab, currentMuzzlePos.position, Quaternion.identity), bulletLifeTime);
+		Destroy(Instantiate(projectilePrefab, currentMuzzlePos.position, currentMuzzlePos.rotation), bulletLifeTime);
 	}
 }

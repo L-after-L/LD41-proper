@@ -30,11 +30,16 @@ public class PlayerMovement : MonoBehaviour {
 	private float shotCounter;
 
 	private Controller2D controller;
+	private ShootingBehaviour shoot;
 
 	private void Start()
 	{
 		controller = GetComponent<Controller2D>();
 
+		if (GetComponent<ShootingBehaviour>() != null)
+		{
+			shoot = GetComponent<ShootingBehaviour>();
+		}
 		// assign jump force based on how high the player wants to jump
 		gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -60,6 +65,10 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			timeForNextShot = Time.time + timeBetweenShots;
 			// call shoot function in another script
+			if (shoot != null)
+			{
+				shoot.Fire();
+			}
 			print("shoot");
 		}
 	}
