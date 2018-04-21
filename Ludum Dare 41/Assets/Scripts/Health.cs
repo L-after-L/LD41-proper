@@ -8,8 +8,6 @@ public class Health : MonoBehaviour {
 	public int startingHealthPoints;
 	public float lifeTime;
 
-	public bool instantDeath = false;
-
 	private int currentHealthPoints;
 	[HideInInspector] public int readOnlyHealthPoints;
 
@@ -18,6 +16,8 @@ public class Health : MonoBehaviour {
 		currentHealthPoints = startingHealthPoints;
 	}
 
+<<<<<<< HEAD
+=======
 	private void Update()
 	{
 		if (instantDeath)
@@ -27,6 +27,7 @@ public class Health : MonoBehaviour {
 		readOnlyHealthPoints = currentHealthPoints;
 	}
 
+>>>>>>> 15bb3361e0e33c54224e4eb36e631ec20786552d
 	public void TakeDamage(int damage) {
 		currentHealthPoints -= damage;
 		if (currentHealthPoints <= 0)
@@ -38,6 +39,6 @@ public class Health : MonoBehaviour {
 	private void Die() {
 		// animate death
 
-		Destroy(this.gameObject, lifeTime);
+		GameObject.Destroy(this.gameObject, lifeTime);
 	}
 }
