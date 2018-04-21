@@ -22,30 +22,37 @@ public class ShootingBehaviour : MonoBehaviour {
 
 	private void Update()
 	{
-		CheckInputs();	// only works for 3 directions right now
+		CheckInputs();	// only works for 5 directions right now
 	}
 
 	private void CheckInputs() {
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
 
-		if (h > 0 && v == 0)
-		{
+		if (h > 0 && v == 0){
 			// player moving right
 			currentMuzzlePos = pos[0];
-			print("right");
+
 		}
-		else if (h < 0 && v == 0)
-		{
+		else if (h < 0 && v == 0){
 			// player moving left
 			currentMuzzlePos = pos[4];
-			print("left");
+	
 		}
 		else if (h == 0 && v > 0) {
 			// player looing up
 			currentMuzzlePos = pos[2];
-			print("up");
-		} else {
+
+		} else if (h > 0 && v > 0) {
+			// player looking right up
+			currentMuzzlePos = pos[1];
+
+		} else if (h < 0 && v > 0) {
+			//player looking left up
+			currentMuzzlePos = pos[3];
+
+		}
+		else {
 			currentMuzzlePos = lastMuzzlePos;
 		}
 
