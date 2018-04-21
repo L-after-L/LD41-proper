@@ -2,53 +2,65 @@
 
 public class ShootingBehaviour : MonoBehaviour {
 
-	public GameObject projectilePrefab;
-	public float bulletSpeed;
 
-	// 1 - Right, -1 - Left
-	float currentDir;
+	[Header ("Gun Specific Variables")]
+	public GameObject projectilePrefab;
+	public float bulletLifeTime;
+
+	[Space]
+	[Header("Shotting positions")]
+	[Tooltip ("Order the positions in this order: right, up, left etc in a counter clockwise direction")]
+	public Transform[] pos;
+
+	private Transform currentMuzzlePos;
+	private Transform lastMuzzlePos;
 
 	private void Start()
 	{
-		currentDir = 1f;
+		currentMuzzlePos = pos[0];
 	}
 
 	private void Update()
 	{
-		// Gets input.
-		float h = 0; /* Input.GetAxisRaw("Horizontal-Shoot"); */
-		//float v = Input.GetAxisRaw("Vertical-Shoot");
-
-		// If h changes, current direction becomes h.
-		if (h != 0f)
-		{
-			currentDir = h;
-		}
-
-		if (Input.GetButtonDown("Horizontal-Shoot"))
-		{
-			GameObject obj = Instantiate(projectilePrefab, transform.position, transform.rotation);
-			Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
-			rb.velocity = obj.transform.right * bulletSpeed;
-			Destroy(obj, 3f);
-		}
-
-		Flip();
-
+		CheckInputs();	// only works for 5 directions right now
 	}
 
-	private void Flip()
-	{
-		// If h is negative, sprite is flipped to face left and vice-versa.
+	private void CheckInputs() {
+		float h = Input.GetAxisRaw("Horizontal");
+		float v = Input.GetAxisRaw("Vertical");
 
-		if (currentDir == -1f)
-		{
-			transform.rotation = Quaternion.Euler(0f,180f,0f);
+		if (h > 0 && v == 0){
+			// player moving right
+			currentMuzzlePos = pos[0];
+
 		}
-		else if (currentDir == 1f)
-		{
-			transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+		else if (h < 0 && v == 0){
+			// player moving left
+			currentMuzzlePos = pos[4];
+	
 		}
+		else if (h == 0 && v > 0) {
+			// player looing up
+			currentMuzzlePos = pos[2];
+
+		} else if (h > 0 && v > 0) {
+			// player looking right up
+			currentMuzzlePos = pos[1];
+
+		} else if (h < 0 && v > 0) {
+			//player looking left up
+			currentMuzzlePos = pos[3];
+
+		}
+		else {
+			currentMuzzlePos = lastMuzzlePos;
+		}
+
+		// keep muzzle direction the same as last frame if no change has been made
+		lastMuzzlePos = currentMuzzlePos;
 	}
 
+	public void Fire() {
+		Destroy(Instantiate(projectilePrefab, currentMuzzlePos.position, currentMuzzlePos.rotation), bulletLifeTime);
+	}
 }

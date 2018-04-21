@@ -5,12 +5,21 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class PlayerMovement : MonoBehaviour {
 
-
+	[Header ("Movement Variables")]
 	public float jumpHeight = 4;
 	public float timeToJumpApex = .4f;
+	public float moveSpeed = 6;
+
+	[Space]
+	[Header("Acceleration Variables")]
 	public float accelerationTimeAirborne = .2f;
 	public float accelerationTimeGrounded = .1f;
-	public float moveSpeed = 6;
+
+	[Space]
+	[Header("Shooting Variables")]
+	public float timeBetweenShots = 1f;
+
+	private float timeForNextShot = 0;
 
 	private float gravity;
 	private float jumpVelocity;
@@ -18,12 +27,19 @@ public class PlayerMovement : MonoBehaviour {
 	private Vector3 velocity;
 	private float velocityXSmoothing;
 
+	private float shotCounter;
+
 	private Controller2D controller;
+	private ShootingBehaviour shoot;
 
 	private void Start()
 	{
 		controller = GetComponent<Controller2D>();
 
+		if (GetComponent<ShootingBehaviour>() != null)
+		{
+			shoot = GetComponent<ShootingBehaviour>();
+		}
 		// assign jump force based on how high the player wants to jump
 		gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -44,6 +60,17 @@ public class PlayerMovement : MonoBehaviour {
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
 		Move(input);
+
+		if (Input.GetKeyDown(KeyCode.J) && Time.time >= timeForNextShot)
+		{
+			timeForNextShot = Time.time + timeBetweenShots;
+			// call shoot function in another script
+			if (shoot != null)
+			{
+				shoot.Fire();
+			}
+			print("shoot");
+		}
 	}
 
 	private void Move(Vector2 input) {
