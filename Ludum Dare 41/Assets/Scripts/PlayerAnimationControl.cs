@@ -7,10 +7,12 @@ using UnityEngine;
 public class PlayerAnimationControl : MonoBehaviour {
 
 	private Animator anim;
+	private PlayerMovement movement;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
+		movement = GetComponent<PlayerMovement>();
 	}
 	
 	// Update is called once per frame
@@ -34,5 +36,7 @@ public class PlayerAnimationControl : MonoBehaviour {
 		{
 			anim.SetBool("aimUp", false);
 		}
+
+		anim.SetBool("isGrounded", movement.isGrounded);
 	}
 }

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float timeToJumpApex = .4f;
 	public float moveSpeed = 6;
 	[HideInInspector] public float readOnlyXMovement;
+	[HideInInspector] public bool isGrounded;
 
 	[Space]
 	[Header("Acceleration Variables")]
@@ -59,6 +60,11 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			velocity.y = 0;
 			jumpCount = 0;
+			isGrounded = true;
+		}
+		else
+		{
+			isGrounded = false;
 		}
 
 		// get playerinput
