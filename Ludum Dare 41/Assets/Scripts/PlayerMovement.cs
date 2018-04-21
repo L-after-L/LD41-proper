@@ -85,7 +85,6 @@ public class PlayerMovement : MonoBehaviour {
 			{
 				shoot.Fire();
 			}
-			print("shoot");
 		}
 	}
 

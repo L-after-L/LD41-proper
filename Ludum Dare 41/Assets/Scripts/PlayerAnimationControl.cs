@@ -38,5 +38,14 @@ public class PlayerAnimationControl : MonoBehaviour {
 		}
 
 		anim.SetBool("isGrounded", movement.isGrounded);
+
+		if (playerInput.x == 0)
+		{
+			anim.SetBool("isIdle", true);
+		}
+		else
+		{
+			anim.SetBool("isIdle", false);
+		}
 	}
 }
