@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class Health : MonoBehaviour {
 
 	public int startingHealthPoints;
@@ -10,6 +11,7 @@ public class Health : MonoBehaviour {
 	public bool instantDeath = false;
 
 	private int currentHealthPoints;
+	[HideInInspector] public int readOnlyHealthPoints;
 
 	private void Awake()
 	{
@@ -22,6 +24,7 @@ public class Health : MonoBehaviour {
 		{
 			Die();
 		}
+		readOnlyHealthPoints = currentHealthPoints;
 	}
 
 	public void TakeDamage(int damage) {

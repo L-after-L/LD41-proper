@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
+[RequireComponent(typeof(Health))]
 public class AIMovement : MonoBehaviour {
 
 	[Header("Collisions")]
@@ -16,16 +17,20 @@ public class AIMovement : MonoBehaviour {
 	public float accelerationTimeGrounded;
 	public float accelerationTimeAirborne;
 
+
+	private Health myHealth;
 	private Controller2D controller;
 	private Vector2 velocity;
 	private float velocityXSmoothing;
 	private float testInput = 0.5f;
 	private Bounds bounds;
 
+	private int hp;
 
 	private void Awake()
 	{
 		controller = GetComponent<Controller2D>();
+		myHealth = GetComponent<Health>();
 	}
 
 	private void Update()
@@ -33,6 +38,12 @@ public class AIMovement : MonoBehaviour {
 		if (controller.collisions.above || controller.collisions.below)
 		{
 			velocity.y = 0;
+		}
+
+		hp = myHealth.readOnlyHealthPoints;
+		if (hp <= 0)
+		{
+			testInput = 0;
 		}
 
 		CheckPath(); // check if path is okay, otherwise reverse it

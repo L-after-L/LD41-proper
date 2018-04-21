@@ -5,18 +5,29 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class PlayerMovement : MonoBehaviour {
 
-
+	[Header ("Movement Variables")]
 	public float jumpHeight = 4;
 	public float timeToJumpApex = .4f;
+	public float moveSpeed = 6;
+
+	[Space]
+	[Header("Acceleration Variables")]
 	public float accelerationTimeAirborne = .2f;
 	public float accelerationTimeGrounded = .1f;
-	public float moveSpeed = 6;
+
+	[Space]
+	[Header("Shooting Variables")]
+	public float timeBetweenShots = 1f;
+
+	private float timeForNextShot = 0;
 
 	private float gravity;
 	private float jumpVelocity;
 	private int jumpCount = 0;
 	private Vector3 velocity;
 	private float velocityXSmoothing;
+
+	private float shotCounter;
 
 	private Controller2D controller;
 
@@ -44,6 +55,13 @@ public class PlayerMovement : MonoBehaviour {
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
 		Move(input);
+
+		if (Input.GetKeyDown(KeyCode.J) && Time.time >= timeForNextShot)
+		{
+			timeForNextShot = Time.time + timeBetweenShots;
+			// call shoot function in another script
+			print("shoot");
+		}
 	}
 
 	private void Move(Vector2 input) {
