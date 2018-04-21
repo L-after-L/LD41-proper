@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	private float gravity;
 	private float jumpVelocity;
+	private int jumpCount = 0;
 	private Vector3 velocity;
 	private float velocityXSmoothing;
 
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 		// assign jump force based on how high the player wants to jump
 		gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
-		print("Gravity: " + gravity + "  Jump Velocity: " + jumpVelocity);
+		//print("Gravity: " + gravity + "  Jump Velocity: " + jumpVelocity);
 		// kinematics bois
 	}
 
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (controller.collisions.above || controller.collisions.below)
 		{
 			velocity.y = 0;
+			jumpCount = 0;
 		}
 
 		// get playerinput
@@ -47,9 +49,10 @@ public class PlayerMovement : MonoBehaviour {
 	private void Move(Vector2 input) {
 		// let player jump if they hit space
 		// can only jump while grounded
-		if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+		if ((Input.GetKeyDown(KeyCode.Space) && controller.collisions.below) || (Input.GetKeyDown(KeyCode.Space) && jumpCount <= 2))
 		{
 			velocity.y = jumpVelocity;
+			jumpCount++;
 		}
 
 		// where the player wants to move
