@@ -80,11 +80,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4003064473381448}
   - component: {fileID: 212017615947014374}
-  - component: {fileID: 114195862280356040}
   - component: {fileID: 61732743321466372}
+  - component: {fileID: 114195862280356040}
   - component: {fileID: 114581111389545884}
-  - component: {fileID: 114426171348697360}
   - component: {fileID: 114609801127961346}
+  - component: {fileID: 114426171348697360}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3be6808c302574f84f533819ab9708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 4
-  timeToJumpApex: 0.8
+  jumpHeight: 2
+  timeToJumpApex: 0.4
   moveSpeed: 6
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1

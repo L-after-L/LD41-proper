@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealthPoints: 100
   lifeTime: 2
+  readOnlyHealthPoints: 0
   instantDeath: 0
 --- !u!114 &114634103924001612
 MonoBehaviour:
@@ -101,6 +102,7 @@ MonoBehaviour:
   movementSpeed: 6
   accelerationTimeGrounded: 0.01
   accelerationTimeAirborne: 0.01
+  attackTime: 1
 --- !u!114 &114770032811654158
 MonoBehaviour:
   m_ObjectHideFlags: 1
