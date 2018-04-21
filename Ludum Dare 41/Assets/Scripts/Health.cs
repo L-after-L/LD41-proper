@@ -7,21 +7,11 @@ public class Health : MonoBehaviour {
 	public int startingHealthPoints;
 	public float lifeTime;
 
-	public bool instantDeath = false;
-
 	private int currentHealthPoints;
 
 	private void Awake()
 	{
 		currentHealthPoints = startingHealthPoints;
-	}
-
-	private void Update()
-	{
-		if (instantDeath)
-		{
-			Die();
-		}
 	}
 
 	public void TakeDamage(int damage) {
@@ -35,6 +25,6 @@ public class Health : MonoBehaviour {
 	private void Die() {
 		// animate death
 
-		Destroy(this.gameObject, lifeTime);
+		GameObject.Destroy(this.gameObject, lifeTime);
 	}
 }
