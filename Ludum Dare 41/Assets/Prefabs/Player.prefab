@@ -85,6 +85,8 @@ GameObject:
   - component: {fileID: 114581111389545884}
   - component: {fileID: 114609801127961346}
   - component: {fileID: 114426171348697360}
+  - component: {fileID: 95337658137343186}
+  - component: {fileID: 114054627194001174}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -215,6 +217,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95337658137343186
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814541164737472}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d3b48d28602cd2448b5b8571829c433, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114054627194001174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814541164737472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ffc29249004254fa7e0094789b0c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114195862280356040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +293,7 @@ MonoBehaviour:
   jumpHeight: 2
   timeToJumpApex: 0.4
   moveSpeed: 6
+  readOnlyXMovement: 0
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1
   timeBetweenShots: 0.5

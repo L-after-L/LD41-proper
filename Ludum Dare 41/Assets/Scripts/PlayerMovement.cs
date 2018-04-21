@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpHeight = 4;
 	public float timeToJumpApex = .4f;
 	public float moveSpeed = 6;
+	[HideInInspector] public float readOnlyXMovement;
 
 	[Space]
 	[Header("Acceleration Variables")]
@@ -96,6 +97,9 @@ public class PlayerMovement : MonoBehaviour {
 
 		// smoothly transition from one direction to another
 		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
+
+		// update readonly
+		readOnlyXMovement = velocity.x;
 
 		// add gravity 
 		velocity.y += gravity * Time.deltaTime;
