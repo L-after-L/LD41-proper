@@ -38,11 +38,6 @@ public class ShootingBehaviour : MonoBehaviour {
 			// player moving left
 			currentMuzzlePos = pos[4];
 	
-		}
-		else if (h == 0 && v > 0) {
-			// player looing up
-			currentMuzzlePos = pos[2];
-
 		} else if (h > 0 && v > 0) {
 			// player looking right up
 			currentMuzzlePos = pos[1];
