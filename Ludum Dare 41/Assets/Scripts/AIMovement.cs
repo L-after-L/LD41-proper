@@ -94,12 +94,25 @@ public class AIMovement : MonoBehaviour {
 	}
 
 	private void Attack() {
-
+		StopAllCoroutines();
+		print("attacking");
 		// call the attack function on the damager script or health script
-		
+		StartCoroutine(Wait(1f));
+
 	}
 
-
+	private IEnumerator Wait(float time) {
+		while (true)
+		{
+			print("waiting");
+			float s = testInput;
+			testInput = 0;
+			yield return new WaitForSeconds(time);
+			print("done Waiting");
+			testInput = s;
+			break;
+		}
+	}
 	
 }
 		
