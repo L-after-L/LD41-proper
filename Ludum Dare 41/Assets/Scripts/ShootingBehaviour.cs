@@ -33,21 +33,11 @@ public class ShootingBehaviour : MonoBehaviour {
 			// player moving right
 			currentMuzzlePos = pos[0];
 
-		}
-		else if (h < 0 && v == 0){
+		} else if (h < 0 && v == 0){
 			// player moving left
 			currentMuzzlePos = pos[4];
 	
-		} else if (h > 0 && v > 0) {
-			// player looking right up
-			currentMuzzlePos = pos[1];
-
-		} else if (h < 0 && v > 0) {
-			//player looking left up
-			currentMuzzlePos = pos[3];
-
-		}
-		else {
+		} else {
 			currentMuzzlePos = lastMuzzlePos;
 		}
 
@@ -56,6 +46,7 @@ public class ShootingBehaviour : MonoBehaviour {
 	}
 
 	public void Fire() {
+		print(currentMuzzlePos.transform.position);
 		Destroy(Instantiate(projectilePrefab, currentMuzzlePos.position, currentMuzzlePos.rotation), bulletLifeTime);
 	}
 }
