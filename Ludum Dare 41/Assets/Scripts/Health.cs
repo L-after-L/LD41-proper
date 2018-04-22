@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Health : MonoBehaviour {
 
+	[HideInInspector] public bool isPlayer = false;
+
 	public int startingHealthPoints;
 	public float lifeTime;
 	public bool canDropItems;
@@ -19,6 +21,10 @@ public class Health : MonoBehaviour {
 	{
 		currentHealthPoints = startingHealthPoints;
 		readOnlyHealthPoints = currentHealthPoints;
+		if (GetComponent<PlayerMovement>() != null)
+		{
+			isPlayer = true;
+		}
 	}
 
 	private void Update()
@@ -32,6 +38,7 @@ public class Health : MonoBehaviour {
 
 	public void TakeDamage(int damage) {
 		currentHealthPoints -= damage;
+
 		if (currentHealthPoints <= 0)
 		{
 			Die();
