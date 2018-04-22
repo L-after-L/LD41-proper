@@ -28,15 +28,6 @@ public class PlayerAnimationControl : MonoBehaviour {
 			anim.SetBool("isRight", false);
 		}
 
-		if (playerInput.y > 0)
-		{
-			anim.SetBool("aimUp", true);
-		}
-		else 
-		{
-			anim.SetBool("aimUp", false);
-		}
-
 		anim.SetBool("isGrounded", movement.isGrounded);
 
 		if (Input.GetAxis("Horizontal") == 0)

@@ -74,7 +74,7 @@ MonoBehaviour:
   obsMask:
     serializedVersion: 2
     m_Bits: 256
-  speed: 8
+  speed: 20
   damage: 200
 --- !u!212 &212823194913733368
 SpriteRenderer:
