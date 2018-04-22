@@ -13,14 +13,16 @@ public class AIAnim : MonoBehaviour {
 		me = GetComponent<AIMovement>();
 		anim = GetComponent<Animator>();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 		if (me.testInput > 0)
 		{
 			anim.SetBool("movingRight", true);
 		}
-		else {
+		else
+		{
 			anim.SetBool("movingRight", false);
 		}
 
@@ -28,7 +30,8 @@ public class AIAnim : MonoBehaviour {
 		{
 			anim.SetBool("isAttacking", true);
 		}
-		else {
+		else
+		{
 			anim.SetBool("isAttacking", false);
 		}
 
@@ -36,5 +39,6 @@ public class AIAnim : MonoBehaviour {
 		{
 			anim.SetBool("isDead", true);
 		}
+		
 	}
 }
