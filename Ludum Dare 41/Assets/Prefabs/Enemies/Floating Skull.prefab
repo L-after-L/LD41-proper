@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114183498859896450}
   - component: {fileID: 95254987233812380}
   - component: {fileID: 114777673092367192}
+  - component: {fileID: 114195996535354966}
   m_Layer: 10
   m_Name: Floating Skull
   m_TagString: Untagged
@@ -130,8 +131,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealthPoints: 100
   lifeTime: 1
+  canDropItems: 0
   readOnlyHealthPoints: 0
+  isDead: 0
   instantDeath: 0
+--- !u!114 &114195996535354966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719712668047892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592d048de0873a748afca90608bdc9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleDrops:
+  - {fileID: 114601526044117174, guid: 61caeb162343dbd4188513fd10ed42b4, type: 2}
 --- !u!114 &114634103924001612
 MonoBehaviour:
   m_ObjectHideFlags: 1
