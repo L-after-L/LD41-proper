@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class DropSystem : MonoBehaviour {
 
+	public float desend;
+
 	public Item[] possibleDrops;
 
 	private Health myHealth;
@@ -24,7 +26,6 @@ public class DropSystem : MonoBehaviour {
 				{
 					int rand = Random.Range(0, possibleDrops.Length - 1);
 
-					Vector2 spawnPoint = new Vector2(transform.position.x, transform.position.y - 0.75f);
 
 					Instantiate(possibleDrops[rand], spawnPoint, transform.rotation);
 
