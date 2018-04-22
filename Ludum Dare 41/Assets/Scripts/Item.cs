@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour {
 
-	public Inventory player;
+	private Inventory player;
 	public LayerMask playerMask;
 	public Stats stats;
 

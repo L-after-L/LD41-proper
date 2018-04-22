@@ -20,6 +20,10 @@ public class AIMovement : MonoBehaviour {
 	[Header("Attacking")]
 	public float attackTime;
 
+	[Space]
+	[Header("Status")]
+	public bool isDead = false;
+
 	[HideInInspector] public bool attacked = false;
 	private float prevInput;
 	private float timeForAtkEnd;
@@ -46,9 +50,11 @@ public class AIMovement : MonoBehaviour {
 		}
 
 		
-		if (myHealth.readOnlyHealthPoints <= 0)
+		if (!isDead && myHealth.readOnlyHealthPoints <= 0)
 		{
+			print(gameObject.name + " died");
 			testInput = 0;
+			isDead = true;
 		}
 
 		if (attacked && Time.time > timeForAtkEnd)
