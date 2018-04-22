@@ -7,9 +7,11 @@ public class Health : MonoBehaviour {
 
 	public int startingHealthPoints;
 	public float lifeTime;
+	public bool canDropItems;
 
 	private int currentHealthPoints;
 	[HideInInspector] public int readOnlyHealthPoints;
+	[HideInInspector] public bool isDead = false;
 
 	public bool instantDeath = false;
 
@@ -38,7 +40,16 @@ public class Health : MonoBehaviour {
 
 	private void Die() {
 		// animate death
+		if (canDropItems)
+		{
+			DropItem();
+		}
+		isDead = true;
 
-		GameObject.Destroy(this.gameObject, lifeTime);
+		Destroy(this.gameObject, lifeTime);
+	}
+
+	public void DropItem() {
+		print(gameObject.name + " dropped something");
 	}
 }
