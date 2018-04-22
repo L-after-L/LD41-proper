@@ -20,7 +20,7 @@ public class AIMovement : MonoBehaviour {
 	[Header("Attacking")]
 	public float attackTime;
 
-	private bool attacked = false;
+	[HideInInspector] public bool attacked = false;
 	private float prevInput;
 	private float timeForAtkEnd;
 
@@ -29,7 +29,7 @@ public class AIMovement : MonoBehaviour {
 
 	private Vector2 velocity;
 	private float velocityXSmoothing;
-	private float testInput = 0.5f;
+	[HideInInspector]public float testInput = 0.5f;
 	private Bounds bounds;
 
 	private int hp;
