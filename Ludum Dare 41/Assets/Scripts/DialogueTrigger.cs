@@ -24,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour {
 
 	private void Update()
 	{
-		Vector2 size = new Vector2(2f, 2f);
+		Vector2 size = new Vector2(1.5f, 1.5f);
 		Collider2D col = Physics2D.OverlapBox(transform.position, size, 0f, mask);
 		if (col != null)
 		{
