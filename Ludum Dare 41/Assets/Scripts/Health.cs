@@ -16,6 +16,7 @@ public class Health : MonoBehaviour {
 	private void Awake()
 	{
 		currentHealthPoints = startingHealthPoints;
+		readOnlyHealthPoints = currentHealthPoints;
 	}
 
 	private void Update()

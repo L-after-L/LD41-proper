@@ -31,5 +31,10 @@ public class AIAnim : MonoBehaviour {
 		else {
 			anim.SetBool("isAttacking", false);
 		}
+
+		if (me.isDead)
+		{
+			anim.SetBool("isDead", true);
+		}
 	}
 }
