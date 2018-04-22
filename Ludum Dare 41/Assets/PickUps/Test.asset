@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb8fb4a126c26a4a8ed61407dd08964, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  name: new item
-  Icon: {fileID: 0}
-  description: It's probably useful
+  name: Test Item
+  value: 0
+  description: This is a test object.

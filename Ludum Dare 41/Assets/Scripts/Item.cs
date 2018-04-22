@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour {
 
+	public Inventory player;
 	public LayerMask playerMask;
 	public Stats stats;
 
@@ -15,6 +16,7 @@ public class Item : MonoBehaviour {
 	{
 		box = GetComponent<BoxCollider2D>();
 		bounds = box.bounds;
+		player = FindObjectOfType<Inventory>().GetComponent<Inventory>();
 	}
 
 	private void Update()
@@ -43,6 +45,11 @@ public class Item : MonoBehaviour {
 	private void ItemPickUp() {
 		print("picked up " + stats.name);
 
-		Destroy(this.gameObject);
+		bool pickedUp = player.Add(stats);
+
+		if (pickedUp)
+		{
+			Destroy(this.gameObject);
+		}
 	}
 }
