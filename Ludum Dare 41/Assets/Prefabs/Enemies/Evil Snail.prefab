@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 114933703259185028}
   - component: {fileID: 95871042203301658}
   - component: {fileID: 114319667599646834}
-  - component: {fileID: 114413937470549096}
   m_Layer: 10
   m_Name: Evil Snail
   m_TagString: Untagged
@@ -170,20 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1788165d2cea64ca9db25aa9337896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114413937470549096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1928531040990232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 592d048de0873a748afca90608bdc9b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possibleDrops:
-  - {fileID: 114601526044117174, guid: 61caeb162343dbd4188513fd10ed42b4, type: 2}
-  - {fileID: 114486563858603858, guid: 0092dc486c425764c85046c53a4ddc8b, type: 2}
 --- !u!114 &114933703259185028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,7 +184,6 @@ MonoBehaviour:
   lifeTime: 1.2
   canDropItems: 1
   readOnlyHealthPoints: 0
-  isDead: 0
   instantDeath: 0
 --- !u!212 &212028024460066534
 SpriteRenderer:
