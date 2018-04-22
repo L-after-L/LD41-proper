@@ -181,7 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealthPoints: 200
-  lifeTime: 0.1
+  lifeTime: 1.2
+  canDropItems: 1
   readOnlyHealthPoints: 0
   instantDeath: 0
 --- !u!212 &212028024460066534
