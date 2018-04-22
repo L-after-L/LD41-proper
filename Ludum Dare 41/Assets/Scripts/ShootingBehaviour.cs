@@ -46,7 +46,6 @@ public class ShootingBehaviour : MonoBehaviour {
 	}
 
 	public void Fire() {
-		print(currentMuzzlePos.transform.position);
 		Destroy(Instantiate(projectilePrefab, currentMuzzlePos.position, currentMuzzlePos.rotation), bulletLifeTime);
 	}
 }
