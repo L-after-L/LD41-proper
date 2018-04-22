@@ -26,6 +26,7 @@ public class DropSystem : MonoBehaviour {
 				{
 					int rand = Random.Range(0, possibleDrops.Length - 1);
 
+					Vector2 spawnPoint = new Vector2(transform.position.x, transform.position.y - desend);
 
 					Instantiate(possibleDrops[rand], spawnPoint, transform.rotation);
 
