@@ -4,15 +4,20 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(Health))]
 public class PlayerAnimationControl : MonoBehaviour {
 
+	private Health myHealth;
 	private Animator anim;
 	private PlayerMovement movement;
+
+	private bool shouldBeActive = true;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
 		movement = GetComponent<PlayerMovement>();
+		myHealth = GetComponent<Health>();
 	}
 	
 	// Update is called once per frame
@@ -37,6 +42,12 @@ public class PlayerAnimationControl : MonoBehaviour {
 		else
 		{
 			anim.SetBool("isIdle", false);
+		}
+
+		if (myHealth.isDead && shouldBeActive)
+		{
+			anim.SetBool("isDead", true);
+			shouldBeActive = false;
 		}
 	}
 }

@@ -8,7 +8,7 @@ public class DropSystem : MonoBehaviour {
 	public Item[] possibleDrops;
 
 	private Health myHealth;
-
+	private bool didDrop = false;
 	// Use this for initialization
 	void Start () {
 		myHealth = GetComponent<Health>();
@@ -20,9 +20,16 @@ public class DropSystem : MonoBehaviour {
 		{
 			if (possibleDrops.Length > 0)
 			{
-				int rand = Random.Range(0, possibleDrops.Length - 1);
+				if (!didDrop)
+				{
+					int rand = Random.Range(0, possibleDrops.Length - 1);
 
-				Instantiate(possibleDrops[rand], transform.position, transform.rotation);
+					Vector2 spawnPoint = new Vector2(transform.position.x, transform.position.y - 0.75f);
+
+					Instantiate(possibleDrops[rand], spawnPoint, transform.rotation);
+
+					didDrop = true;
+				}
 			}
 		}
 	}
