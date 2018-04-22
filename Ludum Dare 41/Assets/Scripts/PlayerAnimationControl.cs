@@ -24,6 +24,8 @@ public class PlayerAnimationControl : MonoBehaviour {
 	void LateUpdate () {
 		Vector2 playerInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
+		anim.SetBool("isDead", false);
+
 		if (playerInput.x > 0)
 		{
 			anim.SetBool("isRight", true);
@@ -47,7 +49,9 @@ public class PlayerAnimationControl : MonoBehaviour {
 		if (myHealth.isDead && shouldBeActive)
 		{
 			anim.SetBool("isDead", true);
+			print("player is dead");
 			shouldBeActive = false;
+			
 		}
 	}
 }
