@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 215420308}
-  verticalOffset: 2
+  verticalOffset: 0
   lookAheadDstX: 0
   lookSmoothTimeX: 0
   verticalSmoothTime: 0
