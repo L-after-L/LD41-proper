@@ -16,7 +16,7 @@ public class PlayerAnimationControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		Vector2 playerInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
 		if (playerInput.x > 0)
@@ -39,7 +39,7 @@ public class PlayerAnimationControl : MonoBehaviour {
 
 		anim.SetBool("isGrounded", movement.isGrounded);
 
-		if (playerInput.x == 0)
+		if (Input.GetAxis("Horizontal") == 0)
 		{
 			anim.SetBool("isIdle", true);
 		}
