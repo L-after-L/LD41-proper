@@ -32,8 +32,6 @@ public class AIMovement : MonoBehaviour {
 	[HideInInspector]public float testInput = 0.5f;
 	private Bounds bounds;
 
-	private int hp;
-
 	private void Awake()
 	{
 		controller = GetComponent<Controller2D>();
@@ -47,8 +45,8 @@ public class AIMovement : MonoBehaviour {
 			velocity.y = 0;
 		}
 
-		hp = myHealth.readOnlyHealthPoints;
-		if (hp <= 0)
+		
+		if (myHealth.readOnlyHealthPoints <= 0)
 		{
 			testInput = 0;
 		}
@@ -61,7 +59,13 @@ public class AIMovement : MonoBehaviour {
 
 		CheckPath(); // check if path is okay, otherwise reverse it
 
+		Move(); // move the object
+	}
+
+	private void Move() {
 		float targetVelocityX = movementSpeed * testInput;
+
+		//print(this.gameObject.name + " direction is " + testInput);
 
 		// smoothly transition to the needed x input
 		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
@@ -109,6 +113,7 @@ public class AIMovement : MonoBehaviour {
 	private void Attack(RaycastHit2D target) {
 		prevInput = testInput;
 		testInput = 0;
+
 		timeForAtkEnd = Time.time + attackTime;
 
 		Health prey = target.collider.gameObject.GetComponent<Health>();
