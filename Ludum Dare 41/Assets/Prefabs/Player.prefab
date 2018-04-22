@@ -87,9 +87,10 @@ GameObject:
   - component: {fileID: 114426171348697360}
   - component: {fileID: 95337658137343186}
   - component: {fileID: 114054627194001174}
+  - component: {fileID: 114815245904459760}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,6 +295,7 @@ MonoBehaviour:
   timeToJumpApex: 0.4
   moveSpeed: 6
   readOnlyXMovement: 0
+  isGrounded: 0
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1
   timeBetweenShots: 0.5
@@ -317,6 +319,19 @@ MonoBehaviour:
   - {fileID: 4815255599397344}
   - {fileID: 4652130717015846}
   - {fileID: 4824832836910296}
+--- !u!114 &114815245904459760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814541164737472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c2cc58f22d8c94a979037bedfcf14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  things: []
+  slots: 20
 --- !u!212 &212017615947014374
 SpriteRenderer:
   m_ObjectHideFlags: 1
