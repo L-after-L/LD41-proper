@@ -6,8 +6,10 @@ using TMPro;
 public class DialogueTrigger : MonoBehaviour {
 
 	public Dialogue dialogue;
-	public GameObject interactPanel;
 	public TextMeshProUGUI nameText;
+
+	public GameObject button1;
+	public GameObject button2;
 
 	LayerMask mask;
 	bool triggered = false;
@@ -31,20 +33,22 @@ public class DialogueTrigger : MonoBehaviour {
 			if (col.gameObject.CompareTag("Player") && !triggered)
 			{
 				nameText.text = "Press E to talk to " + dialogue.name;
-				interactPanel.SetActive(true);
 
 				if (Input.GetKeyDown(KeyCode.E))
 				{
 					TriggerDialogue();
+					button1.SetActive(true);
+					button2.SetActive(true);
 					triggered = true;
-					interactPanel.SetActive(false);
 				}
 			}
 		}
 		else if (col == null)
 		{
 			triggered = false;
-			interactPanel.SetActive(false);
+			button1.SetActive(false);
+			button2.SetActive(false);
+			nameText.text = "";
 		}
 	}
 
