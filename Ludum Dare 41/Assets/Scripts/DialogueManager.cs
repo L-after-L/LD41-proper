@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour {
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
 
+	bool state = false;
+
 	Queue<string> sentences;
 
 	private void Start()
@@ -15,9 +17,16 @@ public class DialogueManager : MonoBehaviour {
 		sentences = new Queue<string>();
 	}
 
+	private void Update()
+	{
+		if (state && Input.GetKeyDown(KeyCode.E))
+		{
+			DisplayNextSentence();
+		}
+	}
+
 	public void StartDialogue(Dialogue dialogue)
 	{
-		//Debug.Log("Starting Conversation with " + dialogue.name);
 		nameText.text = dialogue.name;
 
 		sentences.Clear();
@@ -26,8 +35,6 @@ public class DialogueManager : MonoBehaviour {
 		{
 			sentences.Enqueue(sentence);
 		}
-
-		DisplayNextSentence();
 	}
 
 	public void DisplayNextSentence()
@@ -39,7 +46,6 @@ public class DialogueManager : MonoBehaviour {
 		}
 
 		string sentence = sentences.Dequeue();
-		//Debug.Log(sentence);
 		dialogueText.text = sentence;
 	}
 
@@ -47,6 +53,11 @@ public class DialogueManager : MonoBehaviour {
 	{
 		nameText.text = "...";
 		dialogueText.text = "";
+	}
+
+	public void setState(bool newState)
+	{
+		state = newState;
 	}
 
 }

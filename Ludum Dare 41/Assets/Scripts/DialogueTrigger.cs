@@ -35,12 +35,14 @@ public class DialogueTrigger : MonoBehaviour {
 				{
 					TriggerDialogue();
 					triggered = true;
+					GameObject.Find("DialogueManager").GetComponent<DialogueManager>().setState(true);
 				}
 			}
 		}
 		else if (col == null)
 		{
 			triggered = false;
+			GameObject.Find("DialogueManager").GetComponent<DialogueManager>().setState(true);
 			nameText.text = "";
 		}
 	}
