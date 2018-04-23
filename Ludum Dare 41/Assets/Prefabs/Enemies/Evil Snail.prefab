@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 95871042203301658}
   - component: {fileID: 114319667599646834}
   - component: {fileID: 114190641978205298}
+  - component: {fileID: 114320128816298838}
   m_Layer: 10
   m_Name: Evil Snail
   m_TagString: Untagged
@@ -111,13 +112,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629711591652284}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.9, y: -0.39999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4406588966133496}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &4406588966133496
 Transform:
   m_ObjectHideFlags: 1
@@ -125,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928531040990232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9214303, y: -1.5987538, z: 0}
+  m_LocalPosition: {x: 2.202908, y: -1.6886318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4059194989497176}
@@ -230,6 +231,7 @@ MonoBehaviour:
   accelerationTimeAirborne: 0.01
   attackTime: 1
   dmg: 0
+  isAttacking: 0
   isDead: 0
   attacked: 0
   testInput: 0.5
@@ -244,6 +246,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1788165d2cea64ca9db25aa9337896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114320128816298838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928531040990232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22192f3597f0e1c4fad6bbe70fbf2551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  bullet: {fileID: 1229030556486090, guid: e4fbfd2ebfb1ff245878deefa9744e18, type: 2}
+  mouths:
+  - {fileID: 4280352024047992}
+  - {fileID: 4403926275770612}
 --- !u!114 &114933703259185028
 MonoBehaviour:
   m_ObjectHideFlags: 1
