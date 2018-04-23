@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPanel: {fileID: 0}
+  notEnoughGoldText: {fileID: 0}
   nameText: {fileID: 0}
   goldText: {fileID: 0}
   farms:

@@ -13,6 +13,8 @@ public class ShopKeeper : MonoBehaviour {
 	private LayerMask mask;
 	private bool triggered = false;
 
+	private bool hasReset;
+
 	private void Start()
 	{
         inventory = FindObjectOfType<Inventory>();
@@ -25,22 +27,24 @@ public class ShopKeeper : MonoBehaviour {
 		Collider2D col = Physics2D.OverlapBox(transform.position, size, 0f, mask);
         if (col != null)
         {
-            if (col.gameObject.CompareTag("Player") && !triggered)
+			if (col.gameObject.CompareTag("Player") && !triggered)
             {
-                nameText.text = "Press E to Open Shop";
+				hasReset = false;
+				nameText.text = "Press E to Open Shop";
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     triggered = true;
-                    OpenShop();
-                    nameText.text = "";
+					nameText.text = "";
+					OpenShop();
                 }
             }
         }
-        else if (col == null && triggered)
+        else if (col == null && !hasReset)
         {
             triggered = false;
             nameText.text = "";
+			hasReset = true;
             CloseShop();
         }
 	}
