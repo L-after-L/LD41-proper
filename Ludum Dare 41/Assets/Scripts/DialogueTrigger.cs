@@ -7,12 +7,9 @@ public class DialogueTrigger : MonoBehaviour {
 
 	public Dialogue dialogue;
 	public TextMeshProUGUI nameText;
-	public TextMeshProUGUI dialogueText;
 
 	LayerMask mask;
 	bool triggered = false;
-
-	bool hasReset = false;
 
 	private void Start()
 	{
@@ -32,7 +29,6 @@ public class DialogueTrigger : MonoBehaviour {
 		{
 			if (col.gameObject.CompareTag("Player") && !triggered)
 			{
-				hasReset = false;
 				nameText.text = "Press E to talk to " + dialogue.name;
 
 				if (Input.GetKeyDown(KeyCode.E))
@@ -43,19 +39,11 @@ public class DialogueTrigger : MonoBehaviour {
 				}
 			}
 		}
-		else if (col == null && !hasReset)
+		else if (col == null)
 		{
-			hasReset = true;
 			triggered = false;
-			GameObject.Find("DialogueManager").GetComponent<DialogueManager>().setState(false);
-			nameText.text = "...";
-			dialogueText.text = "";
-		}
-		else if (!GameObject.Find("DialogueManager").GetComponent<DialogueManager>().getState() && !hasReset)
-		{
-			hasReset = true;
-			nameText.text = "...";
-			dialogueText.text = "";
+			GameObject.Find("DialogueManager").GetComponent<DialogueManager>().setState(true);
+			nameText.text = "";
 		}
 	}
 

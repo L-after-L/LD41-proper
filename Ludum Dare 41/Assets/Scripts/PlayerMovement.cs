@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		Move(input);
 
-		if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= timeForNextShot)
+		if (Input.GetKeyDown(KeyCode.J) && Time.time >= timeForNextShot)
 		{
 			timeForNextShot = Time.time + timeBetweenShots;
 			// call shoot function in another script
