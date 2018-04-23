@@ -603,7 +603,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1301960764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,6 +908,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1720463017
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.133151
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.2354655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5.08913
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157130794573958, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ab498509294d5bf4483ff13b034bb810, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1955560273
 GameObject:
   m_ObjectHideFlags: 0
