@@ -20,6 +20,7 @@ public class AIMovement : MonoBehaviour {
 	[Header("Attacking")]
 	public float attackTime;
 	public int dmg;
+	public bool isAttacking;
 
 	[Space]
 	[Header("Status")]
@@ -106,6 +107,9 @@ public class AIMovement : MonoBehaviour {
 			testInput = -testInput;
 			return;
 		}
+		else {
+			isAttacking = false;
+		}
 
 		//check if there is ground in front
 		RaycastHit2D hit = Physics2D.BoxCast(castCentre, castSize, 0f, Vector2.down, (velocity * Time.deltaTime).magnitude, obsMask);
@@ -128,6 +132,7 @@ public class AIMovement : MonoBehaviour {
 		if (prey != null)
 		{
 			prey.TakeDamage(dmg);
+			isAttacking = true;
 		}
 
 		attacked = true;

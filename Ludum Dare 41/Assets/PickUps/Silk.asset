@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Silk
   m_EditorClassIdentifier: 
   name: Spider Silk
-  value: 300
+  value: 30
   description: Feels like it could make some good clothes

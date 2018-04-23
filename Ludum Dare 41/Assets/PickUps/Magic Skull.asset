@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Magic Skull
   m_EditorClassIdentifier: 
   name: Magic Skull
-  value: 250
+  value: 25
   description: A cursed skull from traverlers from a distant past
