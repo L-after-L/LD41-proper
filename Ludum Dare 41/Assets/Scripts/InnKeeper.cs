@@ -43,7 +43,7 @@ public class InnKeeper : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     triggered = true;
-                    nameText.text = "";
+                    nameText.text = "...";
                     OpenShop();
                 }
             }
@@ -52,7 +52,7 @@ public class InnKeeper : MonoBehaviour {
         {
             triggered = false;
 			hasReset = true;
-			nameText.text = "";
+			nameText.text = "...";
 			CloseShop();
         }
 	}

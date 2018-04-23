@@ -59,4 +59,10 @@ public class Health : MonoBehaviour {
 	public void DropItem() {
 		print(gameObject.name + " dropped something");
 	}
+
+	public void setHealth (int hp)
+	{
+		currentHealthPoints = hp;
+	}
+
 }
