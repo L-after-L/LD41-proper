@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 592d048de0873a748afca90608bdc9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desend: -0.75
+  desend: 0
   possibleDrops:
   - {fileID: 114486563858603858, guid: 0092dc486c425764c85046c53a4ddc8b, type: 2}
   - {fileID: 114601526044117174, guid: 61caeb162343dbd4188513fd10ed42b4, type: 2}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   startingHealthPoints: 200
-  lifeTime: 1.2
+  lifeTime: 0
   canDropItems: 1
   readOnlyHealthPoints: 0
   isDead: 0
