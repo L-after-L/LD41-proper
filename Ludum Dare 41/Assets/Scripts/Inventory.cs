@@ -20,8 +20,11 @@ public class Inventory : MonoBehaviour {
         if (Time.time >= timeForClear)
         {
             timeForClear += lifeTime;
-            valueText.text = "";
-        }
+			if (valueText != null)
+			{
+				valueText.text = "";
+			}
+		}
     }
 
 	public bool Add(Stats item) {

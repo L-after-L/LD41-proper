@@ -19,6 +19,7 @@ public class AIMovement : MonoBehaviour {
 	[Space]
 	[Header("Attacking")]
 	public float attackTime;
+	public int dmg;
 
 	[Space]
 	[Header("Status")]
@@ -126,7 +127,7 @@ public class AIMovement : MonoBehaviour {
 
 		if (prey != null)
 		{
-			prey.TakeDamage(50);
+			prey.TakeDamage(dmg);
 		}
 
 		attacked = true;
