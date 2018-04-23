@@ -43,7 +43,7 @@ public class InnKeeper : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     triggered = true;
-                    nameText.text = "...";
+                    nameText.text = "";
                     OpenShop();
                 }
             }
@@ -52,7 +52,7 @@ public class InnKeeper : MonoBehaviour {
         {
             triggered = false;
 			hasReset = true;
-			nameText.text = "...";
+			nameText.text = "";
 			CloseShop();
         }
 	}
@@ -68,7 +68,6 @@ public class InnKeeper : MonoBehaviour {
 		{
 			houses[Random.Range(0, houses.Length)].SetActive(true);
 			totalNPC++;
-			Inventory.gold -= 100;
 		}
 		else
 		{
@@ -82,7 +81,6 @@ public class InnKeeper : MonoBehaviour {
 		{
 			farms[Random.Range(0, farms.Length)].SetActive(true);
 			totalNPC++;
-			Inventory.gold -= 1000;
 		}
 		else
 		{
