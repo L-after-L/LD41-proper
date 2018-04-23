@@ -35,7 +35,7 @@ public class ShopKeeper : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     triggered = true;
-					nameText.text = "";
+					nameText.text = "...";
 					OpenShop();
                 }
             }
@@ -43,7 +43,7 @@ public class ShopKeeper : MonoBehaviour {
         else if (col == null && !hasReset)
         {
             triggered = false;
-            nameText.text = "";
+            nameText.text = "...";
 			hasReset = true;
             CloseShop();
         }
