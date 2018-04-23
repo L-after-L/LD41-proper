@@ -705,7 +705,7 @@ Transform:
   - {fileID: 976283810}
   - {fileID: 709572909}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &219974900
 BoxCollider2D:
@@ -1120,7 +1120,7 @@ RectTransform:
   - {fileID: 225441957}
   - {fileID: 1272573426}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1586,10 +1586,7 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 460288677}
   m_Script: {fileID: 11500000, guid: 35e0a4d2e8ef5f2429a0fcf3db680989, type: 3}
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 44fa9df... tele system now has anims
 --- !u!1001 &526108273
 Prefab:
   m_ObjectHideFlags: 0
@@ -1629,6 +1626,7 @@ Prefab:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 9
 =======
       value: 8
@@ -1636,14 +1634,14 @@ Prefab:
 =======
       value: 8
 >>>>>>> parent of 933799e... Added tutorial man
+=======
+      value: 9
+>>>>>>> parent of e11f59c... merge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f4cf420a1cea704d89aca6f76564517, type: 2}
   m_IsPrefabParent: 0
-<<<<<<< HEAD
 >>>>>>> 933799ec5d4fb31577e9a09af2c325634bf2fae6
-=======
->>>>>>> parent of 44fa9df... tele system now has anims
 --- !u!1 &574586145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,16 +1994,22 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e11f59c... merge
   m_RootOrder: 9
 =======
   m_RootOrder: 8
 >>>>>>> 933799ec5d4fb31577e9a09af2c325634bf2fae6
+<<<<<<< HEAD
 =======
   m_RootOrder: 7
 >>>>>>> parent of 44fa9df... tele system now has anims
 =======
   m_RootOrder: 7
 >>>>>>> parent of 933799e... Added tutorial man
+=======
+>>>>>>> parent of e11f59c... merge
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &607752786
 GameObject:
@@ -10562,7 +10566,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4003064473381448, guid: 8ad2a6a5506a1fe4096ef4cbb072fc1c, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 212017615947014374, guid: 8ad2a6a5506a1fe4096ef4cbb072fc1c,
         type: 2}
@@ -10789,6 +10793,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1288650314
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.177891
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.3173804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196039347065070, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2842202ca157ffa4b8110315d0c6dcc6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1323424909
 GameObject:
   m_ObjectHideFlags: 0
@@ -11051,7 +11097,7 @@ Transform:
   m_Children:
   - {fileID: 1003862285}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1526501719 stripped
 MonoBehaviour:
@@ -11490,16 +11536,22 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e11f59c... merge
   m_RootOrder: 7
 =======
   m_RootOrder: 6
 >>>>>>> 933799ec5d4fb31577e9a09af2c325634bf2fae6
+<<<<<<< HEAD
 =======
   m_RootOrder: 5
 >>>>>>> parent of 44fa9df... tele system now has anims
 =======
   m_RootOrder: 5
 >>>>>>> parent of 933799e... Added tutorial man
+=======
+>>>>>>> parent of e11f59c... merge
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1864066773
 GameObject:
@@ -11699,16 +11751,22 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e11f59c... merge
       value: 8
 =======
       value: 10
 >>>>>>> 933799ec5d4fb31577e9a09af2c325634bf2fae6
+<<<<<<< HEAD
 =======
       value: 9
 >>>>>>> parent of 44fa9df... tele system now has anims
 =======
       value: 9
 >>>>>>> parent of 933799e... Added tutorial man
+=======
+>>>>>>> parent of e11f59c... merge
       objectReference: {fileID: 0}
     - target: {fileID: 114599252578255280, guid: 17a8db7ad36e97b4e9783e0121b38433,
         type: 2}
