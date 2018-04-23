@@ -42,3 +42,4 @@ Ludum Dare 41/Library/shadercompiler-UnityShaderCompiler.exe0.log
 *.dll
 *.cache
 *.log
+*.lock
