@@ -8,9 +8,6 @@ public class DialogueTrigger : MonoBehaviour {
 	public Dialogue dialogue;
 	public TextMeshProUGUI nameText;
 
-	public GameObject button1;
-	public GameObject button2;
-
 	LayerMask mask;
 	bool triggered = false;
 
@@ -37,17 +34,15 @@ public class DialogueTrigger : MonoBehaviour {
 				if (Input.GetKeyDown(KeyCode.E))
 				{
 					TriggerDialogue();
-					button1.SetActive(true);
-					button2.SetActive(true);
 					triggered = true;
+					GameObject.Find("DialogueManager").GetComponent<DialogueManager>().setState(true);
 				}
 			}
 		}
 		else if (col == null)
 		{
 			triggered = false;
-			button1.SetActive(false);
-			button2.SetActive(false);
+			GameObject.Find("DialogueManager").GetComponent<DialogueManager>().setState(true);
 			nameText.text = "";
 		}
 	}
