@@ -55,6 +55,7 @@ public class Inventory : MonoBehaviour {
         {
             gold += item.value;
         }
+		gold *= (InnKeeper.totalNPC) + 1;
         things.Clear();
         
     }

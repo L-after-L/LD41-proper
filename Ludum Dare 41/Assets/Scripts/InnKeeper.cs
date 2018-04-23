@@ -6,12 +6,16 @@ using TMPro;
 public class InnKeeper : MonoBehaviour {
 
 	public GameObject shopPanel;
+	public GameObject notEnoughGoldText;
 	public TextMeshProUGUI nameText;
     public TextMeshProUGUI goldText;
     public GameObject[] farms;
 	public GameObject[] houses;
-    //public static Inventory inventory;
+	//public static Inventory inventory;
 
+	public static int totalNPC = 0;
+
+	private bool hasReset = false;
 
 	LayerMask mask;
 	bool triggered = false;
@@ -19,6 +23,7 @@ public class InnKeeper : MonoBehaviour {
 	private void Start()
 	{
 		mask = LayerMask.GetMask("Player");
+		totalNPC = 0;
 		DisableAll();
 	}
 
@@ -30,9 +35,10 @@ public class InnKeeper : MonoBehaviour {
 		Collider2D col = Physics2D.OverlapBox(transform.position, size, 0f, mask);
         if (col != null)
         {
-            if (col.gameObject.CompareTag("Player") && !triggered)
+			if (col.gameObject.CompareTag("Player") && !triggered)
             {
-                nameText.text = "Press E to Open Build Shop";
+				hasReset = false;
+				nameText.text = "Press E to Open Build Shop";
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -42,14 +48,12 @@ public class InnKeeper : MonoBehaviour {
                 }
             }
         }
-        else if (col == null && triggered)
+        else if (col == null && !hasReset)
         {
             triggered = false;
-            CloseShop();
-            nameText.text = "";
-        }
-        else {
-            nameText.text = "";
+			hasReset = true;
+			nameText.text = "";
+			CloseShop();
         }
 	}
 
@@ -60,17 +64,34 @@ public class InnKeeper : MonoBehaviour {
 
 	public void BuildHouse()
 	{
-		houses[Random.Range(0, houses.Length)].SetActive(true);
+		if (Inventory.gold > 100)
+		{
+			houses[Random.Range(0, houses.Length)].SetActive(true);
+			totalNPC++;
+		}
+		else
+		{
+			notEnoughGoldText.SetActive(true);
+		}
 	}
 
 	public void BuildFarm()
 	{
-		farms[Random.Range(0, farms.Length)].SetActive(true);
+		if (Inventory.gold > 1000)
+		{
+			farms[Random.Range(0, farms.Length)].SetActive(true);
+			totalNPC++;
+		}
+		else
+		{
+			notEnoughGoldText.SetActive(true);
+		}
 	}
 
 	public void CloseShop()
 	{
 		shopPanel.SetActive(false);
+		notEnoughGoldText.SetActive(false);
 	}
 
 	public void DisableAll()
