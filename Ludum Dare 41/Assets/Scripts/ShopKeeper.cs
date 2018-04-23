@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class InnKeeper : MonoBehaviour {
+public class ShopKeeper : MonoBehaviour {
 
 	public GameObject shopPanel;
 	public TextMeshProUGUI nameText;
-	public GameObject[] farms;
-	public GameObject[] houses;
 
 	LayerMask mask;
 	bool triggered = false;
@@ -16,7 +14,6 @@ public class InnKeeper : MonoBehaviour {
 	private void Start()
 	{
 		mask = LayerMask.GetMask("Player");
-		DisableAll();
 	}
 
 	private void Update()
@@ -27,7 +24,7 @@ public class InnKeeper : MonoBehaviour {
 		{
 			if (col.gameObject.CompareTag("Player") && !triggered)
 			{
-				nameText.text = "Press E to Open Build Shop";
+				nameText.text = "Press E to Open Shop";
 
 				if (Input.GetKeyDown(KeyCode.E))
 				{
@@ -49,32 +46,13 @@ public class InnKeeper : MonoBehaviour {
 		shopPanel.SetActive(true);
 	}
 
-	public void BuildHouse()
+	public void Sell()
 	{
-		houses[Random.Range(0, houses.Length)].SetActive(true);
-	}
-
-	public void BuildFarm()
-	{
-		farms[Random.Range(0, farms.Length)].SetActive(true);
+		
 	}
 
 	public void CloseShop()
 	{
 		shopPanel.SetActive(false);
 	}
-
-	public void DisableAll()
-	{
-		foreach (GameObject obj in farms)
-		{
-			obj.SetActive(false);
-		}
-
-		foreach (GameObject obj in houses)
-		{
-			obj.SetActive(false);
-		}
-	}
-
 }
