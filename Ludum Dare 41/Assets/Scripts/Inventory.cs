@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour {
 
 	public List<Stats> things = new List<Stats>();
 	public int slots;
-
+    [HideInInspector] public static int gold;
 
 	public bool Add(Stats item) {
 		if (things.Count >= slots)
@@ -22,4 +22,13 @@ public class Inventory : MonoBehaviour {
 	public void Remove(Stats item) {
 		things.Remove(item);
 	}
+
+    public void RemoveAll() {
+        foreach (Stats item in things)
+        {
+            gold += item.value;
+        }
+        things.Clear();
+        
+    }
 }

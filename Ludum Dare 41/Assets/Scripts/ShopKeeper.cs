@@ -8,11 +8,14 @@ public class ShopKeeper : MonoBehaviour {
 	public GameObject shopPanel;
 	public TextMeshProUGUI nameText;
 
-	LayerMask mask;
-	bool triggered = false;
+    private Inventory inventory;
+
+	private LayerMask mask;
+	private bool triggered = false;
 
 	private void Start()
 	{
+        inventory = FindObjectOfType<Inventory>();
 		mask = LayerMask.GetMask("Player");
 	}
 
@@ -20,25 +23,26 @@ public class ShopKeeper : MonoBehaviour {
 	{
 		Vector2 size = new Vector2(1.5f, 1.5f);
 		Collider2D col = Physics2D.OverlapBox(transform.position, size, 0f, mask);
-		if (col != null)
-		{
-			if (col.gameObject.CompareTag("Player") && !triggered)
-			{
-				nameText.text = "Press E to Open Shop";
+        if (col != null)
+        {
+            if (col.gameObject.CompareTag("Player") && !triggered)
+            {
+                nameText.text = "Press E to Open Shop";
 
-				if (Input.GetKeyDown(KeyCode.E))
-				{
-					triggered = true;
-					OpenShop();
-				}
-			}
-		}
-		else if (col == null && triggered)
-		{
-			triggered = false;
-			CloseShop();
-			nameText.text = "";
-		}
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    triggered = true;
+                    OpenShop();
+                    nameText.text = "";
+                }
+            }
+        }
+        else if (col == null && triggered)
+        {
+            triggered = false;
+            nameText.text = "";
+            CloseShop();
+        }
 	}
 
 	public void OpenShop()
@@ -48,7 +52,8 @@ public class ShopKeeper : MonoBehaviour {
 
 	public void Sell()
 	{
-		
+        inventory.RemoveAll();
+        CloseShop();
 	}
 
 	public void CloseShop()

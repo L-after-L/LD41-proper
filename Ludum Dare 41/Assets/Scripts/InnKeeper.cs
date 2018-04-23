@@ -7,8 +7,11 @@ public class InnKeeper : MonoBehaviour {
 
 	public GameObject shopPanel;
 	public TextMeshProUGUI nameText;
-	public GameObject[] farms;
+    public TextMeshProUGUI goldText;
+    public GameObject[] farms;
 	public GameObject[] houses;
+    //public static Inventory inventory;
+
 
 	LayerMask mask;
 	bool triggered = false;
@@ -21,27 +24,33 @@ public class InnKeeper : MonoBehaviour {
 
 	private void Update()
 	{
+        goldText.text = Inventory.gold + " Gold";
+
 		Vector2 size = new Vector2(1.5f, 1.5f);
 		Collider2D col = Physics2D.OverlapBox(transform.position, size, 0f, mask);
-		if (col != null)
-		{
-			if (col.gameObject.CompareTag("Player") && !triggered)
-			{
-				nameText.text = "Press E to Open Build Shop";
+        if (col != null)
+        {
+            if (col.gameObject.CompareTag("Player") && !triggered)
+            {
+                nameText.text = "Press E to Open Build Shop";
 
-				if (Input.GetKeyDown(KeyCode.E))
-				{
-					triggered = true;
-					OpenShop();
-				}
-			}
-		}
-		else if (col == null && triggered)
-		{
-			triggered = false;
-			CloseShop();
-			nameText.text = "";
-		}
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    triggered = true;
+                    nameText.text = "";
+                    OpenShop();
+                }
+            }
+        }
+        else if (col == null && triggered)
+        {
+            triggered = false;
+            CloseShop();
+            nameText.text = "";
+        }
+        else {
+            nameText.text = "";
+        }
 	}
 
 	public void OpenShop()
