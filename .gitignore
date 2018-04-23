@@ -23,8 +23,6 @@ ExportedObj/
 *.svd
 *.pdb
 
-# Unity3D generated meta files
-*.pidb.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
@@ -36,7 +34,6 @@ sysinfo.txt
 *.log
 Ludum Dare 41/Library/shadercompiler-UnityShaderCompiler.exe0.log
 =======
-*.meta
 >>>>>>> dbd1f2071bc38687d81579622bb7d7c220ccf12f
 *.dll
 *.dll
