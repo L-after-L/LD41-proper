@@ -12,4 +12,10 @@ public class Spawner : MonoBehaviour {
 
 		Instantiate(enemies[rand],transform.position, transform.rotation);	
 	}
+
+	public void Spawn() {
+		int rand = Random.Range(0, enemies.Length - 1);
+
+		Instantiate(enemies[rand], transform.position, transform.rotation);
+	}
 }
