@@ -37,6 +37,7 @@ public class TeleportNode : MonoBehaviour {
 				player.transform.position = destLocation;
 				destNode.canTele = false;
 				canTele = false;
+
 			}
 			
 		}
