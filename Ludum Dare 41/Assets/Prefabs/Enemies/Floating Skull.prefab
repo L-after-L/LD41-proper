@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3fbc8eb13ca9434c9a2feebb373da12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   startingHealthPoints: 100
   lifeTime: 1
   canDropItems: 0
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 592d048de0873a748afca90608bdc9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desend: 0
   possibleDrops:
   - {fileID: 114601526044117174, guid: 61caeb162343dbd4188513fd10ed42b4, type: 2}
 --- !u!114 &114634103924001612
@@ -163,10 +165,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   gravity: -6
-  movementSpeed: 6
+  movementSpeed: 4
   accelerationTimeGrounded: 0.01
   accelerationTimeAirborne: 0.01
   attackTime: 1
+  dmg: 35
+  isAttacking: 0
   isDead: 0
   attacked: 0
   testInput: 0.5

@@ -200,6 +200,8 @@ MonoBehaviour:
   accelerationTimeGrounded: 0.01
   accelerationTimeAirborne: 0.01
   attackTime: 1
+  dmg: 10
+  isAttacking: 0
   isDead: 0
   attacked: 0
   testInput: 0.5
