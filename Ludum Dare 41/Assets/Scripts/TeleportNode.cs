@@ -41,13 +41,12 @@ public class TeleportNode : MonoBehaviour {
 			
 		}
 
-		dialogue.text = "";
-
 		if (Time.time >= time)
 		{
 			canTele = true;
 			destNode.canTele = true;
 			time += 1f;
+			dialogue.text = "";
 		}
 	}
 }
