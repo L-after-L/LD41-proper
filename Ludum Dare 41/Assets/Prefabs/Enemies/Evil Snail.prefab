@@ -209,8 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desend: -0.75
   possibleDrops:
-  - {fileID: 114486563858603858, guid: 0092dc486c425764c85046c53a4ddc8b, type: 2}
-  - {fileID: 114601526044117174, guid: 61caeb162343dbd4188513fd10ed42b4, type: 2}
+  - {fileID: 1107948099146726, guid: 0092dc486c425764c85046c53a4ddc8b, type: 2}
 --- !u!114 &114192416801264916
 MonoBehaviour:
   m_ObjectHideFlags: 1

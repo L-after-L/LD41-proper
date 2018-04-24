@@ -7,7 +7,7 @@ public class DropSystem : MonoBehaviour {
 
 	public float desend;
 
-	public Item[] possibleDrops;
+	public GameObject[] possibleDrops;
 
 	private Health myHealth;
 	private bool didDrop = false;

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desend: 0
   possibleDrops:
-  - {fileID: 114601526044117174, guid: 61caeb162343dbd4188513fd10ed42b4, type: 2}
+  - {fileID: 1107948099146726, guid: b1b0742e720c0954cb52274a9c47541b, type: 2}
 --- !u!114 &114634103924001612
 MonoBehaviour:
   m_ObjectHideFlags: 1
