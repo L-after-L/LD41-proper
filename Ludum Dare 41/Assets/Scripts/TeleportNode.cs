@@ -27,11 +27,9 @@ public class TeleportNode : MonoBehaviour {
 	void Update () {
 		Collider2D hit = Physics2D.OverlapBox(box.bounds.center, box.bounds.size, 0f, teleMask);
 		if (hit)
-		{
-			if (dialogue != null)
-			{
-				dialogue.text = travelText;
-			}
+		{			
+			dialogue.text = "press e to enter portal";
+			
 
 			if (Input.GetKeyDown(KeyCode.E) && destNode.canTele)
 			{
@@ -40,12 +38,10 @@ public class TeleportNode : MonoBehaviour {
 				destNode.canTele = false;
 				canTele = false;
 			}
-			print("in range");
-			if (dialogue != null)
-			{
-				dialogue.text = "";
-			}
+			
 		}
+
+		dialogue.text = "";
 
 		if (Time.time >= time)
 		{
