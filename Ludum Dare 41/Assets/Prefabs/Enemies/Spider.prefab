@@ -178,10 +178,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   gravity: -6
-  movementSpeed: 2
+  movementSpeed: 8
   accelerationTimeGrounded: 0.01
   accelerationTimeAirborne: 0.01
   attackTime: 1
+  dmg: 15
+  isAttacking: 0
   isDead: 0
   attacked: 0
   testInput: 0.5

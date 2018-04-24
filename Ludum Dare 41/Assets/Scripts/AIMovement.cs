@@ -131,6 +131,7 @@ public class AIMovement : MonoBehaviour {
 
 		if (prey != null)
 		{
+			print("damaged");
 			prey.TakeDamage(dmg);
 			isAttacking = true;
 		}
